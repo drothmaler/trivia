@@ -7,10 +7,11 @@ set (CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
         src/Game.cpp
+        src/GameRunner.cpp
 )
 
 set(MAIN
-        src/GameRunner.cpp
+        src/GameMain.cpp
 )
 
 set(INCLUDE
@@ -32,7 +33,9 @@ include(GoogleTest)
 ## Unit Tests ##
 
 set(TEST_SOURCES
-        test/GameTest.cpp)
+        test/GameTest.cpp
+        test/GameRunnerTest.cpp
+)
 
 add_executable(TriviaTest ${TEST_SOURCES} ${SOURCES})
 target_link_libraries(TriviaTest gtest_main)

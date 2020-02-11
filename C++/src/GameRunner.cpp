@@ -1,31 +1,29 @@
 ﻿#include <stdlib.h>
 #include "Game.h"
 
-static bool notAWinner;
 
-int main()
-{
 
-	srand(time(NULL));
-	Game aGame;
+void runGame() {
+    Game aGame;
 
-	aGame.add("Chet");
-	aGame.add("Pat");
-	aGame.add("Sue");
+    aGame.add("Chet");
+    aGame.add("Pat");
+    aGame.add("Sue");
 
-	do
-	{
+    bool notAWinner;
 
-		aGame.roll(rand() % 5 + 1);
+    do
+    {
 
-		if (rand() % 9 == 7)
-		{
-			notAWinner = aGame.wrongAnswer();
-		}
-		else
-		{
-			notAWinner = aGame.wasCorrectlyAnswered();
-		}
-	} while (notAWinner);
+        aGame.roll(rand() % 5 + 1);
 
+        if (rand() % 9 == 7)
+        {
+            notAWinner = aGame.wrongAnswer();
+        }
+        else
+        {
+            notAWinner = aGame.wasCorrectlyAnswered();
+        }
+    } while (notAWinner);
 }
