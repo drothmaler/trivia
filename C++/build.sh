@@ -44,6 +44,16 @@ function runAllTests() {
     cd "${PROJECT_DIR}" || exit 1
 }
 
+function runPCLint() {
+    echo "------------------------------------"
+    echo "-------- runPCLint: start build (${START_TIME}) "
+    echo "------------------------------------"
+
+    cd "${BUILD_DIR}" || exit 1
+    make Trivia_lint || exit 1
+    cd "${PROJECT_DIR}" || exit 1
+}
+
 function buildAllModules() {
     cleanAndPrepare
     runCmake
@@ -56,6 +66,7 @@ function defaultBuild() {
     runCmake
     runMake
     runAllTests
+    runPCLint
 }
 
 echo "build with directories..."
@@ -78,6 +89,9 @@ case "$1" in
     test)
         runMake
         runAllTests
+        ;;
+    lint)
+        runPCLint
         ;;
     *)
         defaultBuild

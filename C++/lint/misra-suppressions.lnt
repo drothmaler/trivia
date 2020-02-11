@@ -1,0 +1,17 @@
+// This file contains all suppressions that affect MISRA rules.
+
+// [MISRA C++ Rule 3-9-2] is just advisory and not a problem.
+-e970
+
+// Since we are still in development, we can allow unused elements for now - the modules aren't all working together yet
+-e1714
+-e714
+-e758
+-e1914
+-e757
+
+// PC lint detects some calls to the FSoE stack in the error handling as recursive, though strictly
+// speaking it is not since these branches are "dead" in this case.
+// Anyway, this rule is advisory and PC lint won't allow finer options for disabling it - so we
+// disable it globally.
+-e9070

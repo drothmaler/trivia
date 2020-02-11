@@ -1,0 +1,23 @@
+// This file contains suppressions that are not relevant for MISRA compliance
+// (e.g. suppressions from 3rd party libraries or
+// suppression of rules that are not relevant for MISRA).
+
+// FSoE Stack has out of bounds pointer access, methods that could be static, data overruns, unreferenced macros,
+// pointer arithmetic, unreferenced members in global struct, params that could be const, implicit conversion,
+// self-defined boolean, global symbol declarations, unused value assignments, const casts, optimizable additions,
+// monocarpic do-while loops, ambiguity, function like macros, unparenthised macro parameters, suspicious lint params,
+// dangerous header includes, pointer conversions, array types passed as pointers, ignored return values, unusual sizeofs,
+// different parameter names, potentially dangerous negations, bad lint options, loss of signs, null statements on same lines,
+// implicit function to pointer decay, implicit conversion to smaller types, casts from pointer to integer,
+// possibly truncated integer operations, change of signedness, dangerous ^ usage, pointer casts to greater types, ...
+-efile(*, */fsoe_stack/*)
+-efile(*, */fsoe_stack_master/*)
+-emacro(1924, IXX_*) // IXX-macros use C-Style cast
+
+// Ignore warnings within uCOS II or BSP
+-efile(*, */sp2_ucos/*)
+-emacro(*, HW_*)
+-emacro(*, OS_*)
+
+-e526
+-e769

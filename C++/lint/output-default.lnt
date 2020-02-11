@@ -1,0 +1,5 @@
+-width(79,4)
+-"format=%(%f %l %)%t %n: %m"
+-format_intro=""
+
+

@@ -1,0 +1,16 @@
+-t4                         // Tab width is four spaces.
++fdi                        // Look for header files in including files folder first.
+-frz                        // Return with an error code even if only warnings are present.
+-max_threads=4              // Allow usage of up to four threads
++libclass(angle)            // Only headers included via <> are considered library headers.
+
+toolchain.lnt
+
+policy.lnt
+
+au-misra-cpp.lnt
+-wlib(4)                    // Skip MISRA checking of libraries by first raising wlib level to 4
+-wlib(1)                    // and then immediately lowering wlib level to 1, as advised by Gimpel.
+
+misra-suppressions.lnt
+policy-suppressions.lnt

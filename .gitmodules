@@ -1,0 +1,9 @@
+[submodule "C++/pclp/pclp"]
+	path = C++/pclp/pclp
+	url = ssh://git@extra1.franka.de:7999/nub/pclp.git
+[submodule "C++/pclp/pclp-integration"]
+	path = C++/pclp/pclp-integration
+	url = ssh://git@extra1.franka.de:7999/nub/pclp-integration.git
+[submodule "C++/pclp/pclp-policy"]
+	path = C++/pclp/pclp-policy
+	url = ssh://git@extra1.franka.de:7999/nub/pclp-policy.git

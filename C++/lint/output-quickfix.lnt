@@ -1,0 +1,4 @@
+-width(0)
+-format="%f:%l:%t %n\n%m"
+-format_intro=\n
+

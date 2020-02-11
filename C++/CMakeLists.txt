@@ -24,6 +24,16 @@ set_target_properties(Trivia
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/out
 )
 
+set(PCLP_TARGET_COMPILER "clang" CACHE STRING "Use CLang Compiler" FORCE)
+set(PCLP_PCLP_PATH ${CMAKE_SOURCE_DIR}/pclp/pclp)
+set(PCLP_POLICY_PATH ${CMAKE_SOURCE_DIR}/pclp/pclp-policy)
+set(PCLP_INTEGRATION_PATH ${CMAKE_SOURCE_DIR}/pclp/pclp-integration)
+
+set(CMAKE_MODULE_PATH ${PCLP_INTEGRATION_PATH})
+include(pclp)
+
+add_lint_target(Trivia)
+
 # enable CTest testing
 enable_testing()
 include(${CMAKE_SOURCE_DIR}/cmake/googletest-download.cmake)
